@@ -1,0 +1,584 @@
+/* ここから下に記載していく */
+@charset "utf-8";
+
+/* フォント指定 */
+@font-face {
+	font-family: 'basefont';
+  src: url('../fonts/misaki_gothic_2nd.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Font1';
+  src: url('../fonts/misaki_mincho.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Font2';
+  src: url('../fonts/PixelMplus12-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Font3';
+  src: url('../fonts/MPLUSRounded1c-Medium.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Font4';
+  src: url('../fonts/MPLUSRounded1c-Regular.ttf') format('truetype');
+}
+
+.backcolor {
+  background-color: #cc46d8;
+  text-shadow: 1px 2px 3px #cc46d8;
+}
+
+.basefont {
+  font-family: 'basefont'; /* @font-faceで定義したフォント名を指定 */
+}
+
+.font1 {
+  font-family: 'Font1'; /* @font-faceで定義したフォント名を指定 */
+}
+
+.font2 {
+  font-family: 'Font2'; /* @font-faceで定義したフォント名を指定 */
+  background-color: #FEF100;
+  text-shadow: 1px 2px 3px #cc46d8;
+}
+
+.font3 {
+  font-family: 'Font3'; /* @font-faceで定義したフォント名を指定 */
+}
+.font4 {
+  font-family: 'Font4'; /* @font-faceで定義したフォント名を指定 */
+}
+
+/* フォント指定おわり */
+
+/* 点滅アニメーション */
+.skew {
+  animation: skew 30s infinite;
+}
+@keyframes skew {
+  0% {
+    transform: none;
+  }
+  33% {
+    transform: none;
+  }
+  33.3% {
+    transform: skewX(30deg);
+  }
+  33.6% {
+    transform: skewX(-30deg);
+  }
+  33.9% {
+    transform: none;
+  }
+  66% {
+    transform: none;
+  }
+  66.3% {
+    transform: skewX(5deg);
+  }
+  66.6% {
+    transform: skewX(-5deg);
+  }
+  66.9% {
+    transform: none;
+  }
+  77% {
+    transform: none;
+  }
+  77.3% {
+    transform: skewX(15deg);
+  }
+  77.6% {
+    transform: skewX(-15deg);
+  }
+  77.9% {
+    transform: none;
+  }
+}
+
+/* inview設定 */
+.fadeIn {
+  opacity: 0;
+  transition: 2s;
+}
+.fadeIn.is-show {
+  opacity: 1;
+}
+
+/* ここから各要素を指定 */
+.wrap {
+  width: 1200px;
+}
+
+/* ヘッダー始まり */
+header {
+  width: 100%;
+  padding: 10px 0%;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.header__logo {
+  margin: 0 0 0 20px;
+  padding: 0;
+  font-size: 40px;
+}
+
+.header__navbar {
+  align-items: center;
+  margin: 0 0 0 auto;
+  display: flex;
+}
+
+.header__navbar ul {
+  display: flex;
+  margin: 0;
+}
+
+.header__navbar li {
+  margin: 0 50px 0 0;
+  font-size: 21px;
+}
+
+#myCanvas {
+  position: absolute;
+  left: 0px;
+  z-index: -100;
+}
+
+#mainbg {
+  /* background: url("../img/mainbg.png"); */
+  height: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainbg li {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  color: #ffd61a;
+  font-size: 30px;
+}
+
+#mainbg li:first-child {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.about {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.title--yellow {
+  color: #ffd61a;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 60px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #222222;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+h3 { 
+  font-size: 16px;
+  color: #222222;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.about__images {
+  margin-top: 80px;
+  /* background-color: #fff;     背景色指定 */
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.about__images__image {
+  color:  #fff;               /* 文字色 */
+  margin:  10px;              /* 外側の余白 */
+  border-radius:  5px;        /* 角丸指定 */
+  align-self: stretch;        /* 縦の位置指定 */
+}
+
+.about__images__image img {
+  width: 100%;
+}
+
+/* コース */
+.course {
+  text-align: center;
+}
+
+.title--black {
+  color: #222222;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.course__description {
+  margin-bottom: 60px;
+}
+
+.courseinfo1, .courseinfo3 {
+  display: flex;
+}
+
+.courseinfo2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.courseinfo__image {
+  width: 50%;
+}
+
+.courseinfo__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.courseinfo__card {
+  /* background-color: #fafafa; */
+  margin: 0;
+  width: 50%;
+}
+
+.courseinfo__textbox {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  margin-left: 50px;
+  padding: 0;
+  width: 430px;
+  text-align: left;
+}
+
+.courseinfo__textbox--left {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  margin-left: 120px;
+  width: 430px;
+  text-align: left;
+}
+
+.courseinfo__title {
+  color: #222222;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+/* ニュース */
+.news {
+  text-align: center;
+}
+
+.newsitems {
+  display: flex;
+  justify-content: center;
+}
+
+.newscard {
+  width: 300px;
+  margin-left: 30px;
+  margin-bottom: 60px;
+}
+
+.newscard:hover {
+  background-color: #fafafa;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.newscard__textbox {
+  text-align: left;
+}
+
+.newscard__date {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #222222;
+}
+
+.newscard__text {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #222222;
+  line-height: 1.8;
+}
+
+.news__more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 60px;
+  margin: 0 auto;
+  background-color:#ffd61a;
+}
+
+.news__more:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.news__more__text {
+  color: white;
+  font-size: 18px;
+}
+
+/* アクセス */
+.access {
+  text-align: center;
+  /* background: #fafafa; */
+  margin-top: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.accessinfo {
+  margin:60px 200px 0px 400px;
+}
+
+.accessinfo__text dl {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.accessinfo__text dt {
+  width: 25%;
+  margin-bottom: 30px;
+}
+
+.accessinfo__text dd {
+  width: 75%;
+}
+
+/* コンタクト */
+
+.contact {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.contact__form {
+  display: flex;
+  justify-content: center;
+}
+
+.contact__form__contents {
+  width: 640px;
+}
+
+.item {
+  border-top: solid;
+  border-color: #bfbfbf;
+  width: 100%;
+  display: flex;
+  height: 55px;
+}
+
+.item--reason {
+  border-top: solid;
+  border-color: #bfbfbf;
+  width: 100%;
+  display: flex;
+  height: 220px;
+}
+
+.item--detail {
+  border-top: solid;
+  border-bottom: solid;
+  border-color: #bfbfbf;
+  width: 100%;
+  display: flex;
+  height: 120px;
+  margin-bottom: 30px;
+}
+
+.item__title {
+  border-right: solid;
+  border-color: #bfbfbf;
+  flex-basis: 29%;
+  display: flex;
+  padding-left: 16px;
+  align-items: center;
+  padding-right: 64px;
+}
+
+.item__title--reason, .item__title--detail {
+  border-right: solid;
+  border-color: #bfbfbf;
+  flex-basis: 29%;
+  display: flex;
+  padding-left: 16px;
+  align-items: flex-start;
+  padding-right: 64px;
+  padding-top: 20px;
+}
+
+label {
+  text-align: left;
+  line-height: 1.1;
+}
+
+.inputfield {
+  width: 328px;
+  height: 36px;
+  border-color: #e4e1e1;
+  padding: 0;
+}
+
+.inputfield--detail {
+  width: 328px;
+  height: 100px;
+  border-color: #e4e1e1;
+  padding: 0;
+}
+
+.item__parts {
+  flex-basis: 71%;
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item__parts--reason {
+  flex-basis: 71%;
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my-checkbox {
+  display: block;
+  position: relative;
+  font-size: 15px;
+  margin: 12px 0;
+  padding-left: 26px;
+  cursor: pointer;
+  user-select: none; /* テキストの選択を防ぐ */
+}
+
+/* inputは非表示にする */
+.my-checkbox input {
+  display: none;
+}
+
+/* □ */
+.checkmark {
+  position: absolute;
+  top: 0; /* 上からの位置 */
+  left: 0;
+  height: 22px; /* 大きさ */
+  width: 22px; /* 大きさ */
+  border: solid 2px white; /* 線 */
+  background-color: #d85b5b;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+/* ✓ */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  left: 5px; /* チェックの位置 */
+  top: 1px; /* チェックの位置 */
+  width: 6px; /* チェックの大きさ */
+  height: 10px; /* チェックの大きさ */
+  border: solid #FFF;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0; /* 透明にしておく */
+}
+
+/* チェックが入ったときの□ */
+.my-checkbox input:checked + .checkmark {
+  background: #2e80ff; /* チェック時の色 */
+  border-color: #2e80ff; /* チェック時の色 */
+}
+
+/* チェックが入ったときの✓ */
+.my-checkbox input:checked + .checkmark:after {
+  opacity: 1; /* 透明を解除 */
+}
+
+.contact__submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 60px;
+  margin: 0 auto;
+  background-color:#ffd61a;
+}
+
+.contact__submit:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.contact__submit__text {
+  color: white;
+  font-size: 18px;
+}
+
+.footer {
+  margin-top: 140px;
+}
+
+.footerbar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #707070;
+}
+
+.footer__text {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.ityped-cursor {
+  font-size: 1em;
+  opacity: 1;
+  -webkit-animation: blink 0.3s infinite;
+  -moz-animation: blink 0.3s infinite;
+  animation: blink 0.3s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  100% {
+      opacity: 0;
+  }
+}
+
+@-webkit-keyframes blink {
+  100% {
+      opacity: 0;
+  }
+}
+
+@-moz-keyframes blink {
+  100% {
+      opacity: 0;
+  }
+}
+
